@@ -1,0 +1,23 @@
+.shop-container {
+  /* margin-top: 5%; */
+  display: flex;
+}
+
+.product-container {
+  width: 70%;
+  /* margin-left: 13%; */
+  /* margin-right: 1%; */
+  border-right: 1px solid grey;
+}
+.rightSide {
+  width: 30%;
+  /* position: relative; */
+}
+.cart-container {
+  position: sticky;
+  top: 80px;
+  height: 60vh;
+}
+.con {
+  /* background: linear-gradient(to right, white, white, #5cdb95); */
+}

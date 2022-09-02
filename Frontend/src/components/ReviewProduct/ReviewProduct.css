@@ -1,0 +1,44 @@
+.reviewProduct {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+  margin-top: 1%;
+  padding-bottom: 1%;
+}
+.reviewProduct p {
+  text-align: center;
+}
+
+.reviewProduct-img {
+  width: 12%;
+  padding-right: 2%;
+}
+.reviewProduct-img img {
+  width: 100%;
+}
+
+.reviewProduct-name {
+  margin-right: 1%;
+  width: 40%;
+  color: rgb(48, 81, 225);
+}
+.reviewProduct-price {
+  width: 8%;
+  color: rgb(48, 81, 225);
+}
+.reviewProduct-quantity {
+  width: 12%;
+  color: rgb(48, 81, 225);
+}
+
+.reviewProduct-subtotal {
+  width: 12%;
+  color: rgb(48, 81, 225);
+}
+.crossBtn {
+  width: 7%;
+  border: none;
+  font-size: 140%;
+  background-color: transparent;
+}

@@ -5,6 +5,7 @@
 
 .product-container {
   width: 70%;
+  min-height: 100vh;
   /* margin-left: 13%; */
   /* margin-right: 1%; */
   border-right: 1px solid grey;

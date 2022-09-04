@@ -4,6 +4,9 @@ import { CartContext, ProductsContext } from "../../App";
 import Cart from "../Cart/Cart";
 import Header from "../Header/Header";
 import Product from "../Product/Product";
+import * as React from "react";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 import "./Shop.css";
 
@@ -51,14 +54,26 @@ const Shop = () => {
       <Container className="con">
         <div className="shop-container">
           <div className="product-container">
-            {products.map((element) => (
-              <Product
-                product={element}
-                handleAddCartBtn={handleAddCartBtn}
-                key={element.key}
-                btnName="Add to cart"
-              ></Product>
-            ))}
+            {products.length == 0 ? (
+              <Box
+                sx={{
+                  position: "fixed",
+                  top: "50vh",
+                  left: "28%",
+                }}
+              >
+                <CircularProgress />
+              </Box>
+            ) : (
+              products.map((element) => (
+                <Product
+                  product={element}
+                  handleAddCartBtn={handleAddCartBtn}
+                  key={element.key}
+                  btnName="Add to cart"
+                ></Product>
+              ))
+            )}
           </div>
           <div className="rightSide">
             <div className="cart-container">

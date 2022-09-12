@@ -33,6 +33,7 @@ function Auth() {
   };
   const [user, setUser] = useState(initialUser);
   const [button, setButton] = useState("login");
+  const [submit, setSubmit] = useState(false);
 
   // const handleSignOut = () => {
   //   logOut().then((response) => {
@@ -116,7 +117,13 @@ function Auth() {
       ................................................................................... */
     }
 
-    if (button === "signup" && user.email && user.name && user.password) {
+    if (
+      button === "signup" &&
+      submit === true &&
+      user.email &&
+      user.name &&
+      user.password
+    ) {
       const auth = getAuth();
       createUserWithEmailAndPassword(auth, user.email, user.password)
         .then((userCredential) => {
@@ -134,7 +141,7 @@ function Auth() {
           setLoggedInUser(newUser);
         });
     }
-    if (button === "login" && user.email && user.password) {
+    if (button === "login" && submit === true && user.email && user.password) {
       const auth = getAuth();
       signInWithEmailAndPassword(auth, user.email, user.password)
         .then((userCredential) => {
@@ -216,6 +223,7 @@ function Auth() {
                 <FormTopButton
                   onClick={() => {
                     setButton("signup");
+                    setSubmit(false);
                   }}
                   className={button === "signup" ? "active" : ""}
                 >
@@ -224,6 +232,7 @@ function Auth() {
                 <FormTopButton
                   onClick={() => {
                     setButton("login");
+                    setSubmit(false);
                   }}
                   className={button === "login" ? "active" : ""}
                 >
@@ -264,6 +273,9 @@ function Auth() {
                 />
                 <input
                   type="submit"
+                  onClick={() => {
+                    setSubmit(true);
+                  }}
                   style={FormDownButton}
                   value={button === "signup" ? "Signup" : "Login"}
                 />
